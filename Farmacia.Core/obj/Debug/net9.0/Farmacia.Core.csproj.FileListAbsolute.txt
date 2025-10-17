@@ -1,0 +1,14 @@
+D:\Visual studio morado\Farmacia\Farmacia.Core\bin\Debug\net9.0\Farmacia.Core.deps.json
+D:\Visual studio morado\Farmacia\Farmacia.Core\bin\Debug\net9.0\Farmacia.Core.runtimeconfig.json
+D:\Visual studio morado\Farmacia\Farmacia.Core\bin\Debug\net9.0\Farmacia.Core.dll
+D:\Visual studio morado\Farmacia\Farmacia.Core\bin\Debug\net9.0\Farmacia.Core.pdb
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\Farmacia.Core.csproj.AssemblyReference.cache
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\Farmacia.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\Farmacia.Core.AssemblyInfoInputs.cache
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\Farmacia.Core.AssemblyInfo.cs
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\Farmacia.Core.csproj.CoreCompileInputs.cache
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\Farmacia.Core.dll
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\refint\Farmacia.Core.dll
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\Farmacia.Core.pdb
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\Farmacia.Core.genruntimeconfig.cache
+D:\Visual studio morado\Farmacia\Farmacia.Core\obj\Debug\net9.0\ref\Farmacia.Core.dll

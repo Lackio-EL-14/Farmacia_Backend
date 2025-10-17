@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Farmacia.Core.Entities
+{
+    public class Traspaso : BaseEntities
+    {
+        //public int Id { get; set; }
+        public DateTime Fecha { get; set; } = DateTime.Now;
+        public string Estado { get; set; } = "Pendiente"; // Pendiente, Enviado, Recibido
+
+        public int ProductoId { get; set; }
+        public Producto Producto { get; set; } = null!;
+    }
+}
