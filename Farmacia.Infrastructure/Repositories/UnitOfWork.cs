@@ -8,22 +8,24 @@ namespace Farmacia.Infrastructure.Repositories
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly FarmaciaContext _context;
-
-        // Campos privados
         private IBaseRepository<Producto>? _productos;
         private IBaseRepository<Cliente>? _clientes;
-        // Aquí puedes añadir los demás repositorios (Proveedores, Ventas, etc.)
+        private IBaseRepository<Venta>? _ventas;
+        private IBaseRepository<DetalleVenta>? _detallesVenta;
+        private IBaseRepository<Factura>? _facturas;
 
         public UnitOfWork(FarmaciaContext context)
         {
-            _context = context ?? throw new ArgumentNullException(nameof(context));
+            _context = context;
         }
 
-        // Repositorios expuestos
         public IBaseRepository<Producto> Productos => _productos ??= new BaseRepository<Producto>(_context);
         public IBaseRepository<Cliente> Clientes => _clientes ??= new BaseRepository<Cliente>(_context);
+        public IBaseRepository<Venta> Ventas => _ventas ??= new BaseRepository<Venta>(_context);
+        public IBaseRepository<DetalleVenta> DetallesVenta => _detallesVenta ??= new BaseRepository<DetalleVenta>(_context);
+        public IBaseRepository<Factura> Facturas => _facturas ??= new BaseRepository<Factura>(_context);
 
-        // Métodos de guardado
+
         public void SaveChanges()
         {
             try
@@ -32,7 +34,6 @@ namespace Farmacia.Infrastructure.Repositories
             }
             catch (DbUpdateException ex)
             {
-                // Captura errores de integridad referencial (FK, duplicados, etc.)
                 throw new Exception($"Error al guardar los cambios: {ex.InnerException?.Message ?? ex.Message}");
             }
         }
@@ -45,12 +46,10 @@ namespace Farmacia.Infrastructure.Repositories
             }
             catch (DbUpdateException ex)
             {
-                // Mismo control pero en versión async
                 throw new Exception($"Error al guardar los cambios: {ex.InnerException?.Message ?? ex.Message}");
             }
         }
 
-        // Liberar contexto
         public void Dispose()
         {
             _context?.Dispose();

@@ -17,3 +17,4 @@ D:\Visual studio morado\Farmacia\Farmacia.Validations\bin\Debug\net9.0\Farmacia.
 D:\Visual studio morado\Farmacia\Farmacia.Validations\bin\Debug\net9.0\Farmacia.Core.pdb
 D:\Visual studio morado\Farmacia\Farmacia.Validations\bin\Debug\net9.0\Farmacia.Infrastructure.pdb
 D:\Visual studio morado\Farmacia\Farmacia.Validations\obj\Debug\net9.0\Farmacia.4B0EC4B2.Up2Date
+D:\Visual studio morado\Farmacia\Farmacia.Validations\obj\Debug\net9.0\Farmacia.Validations.sourcelink.json

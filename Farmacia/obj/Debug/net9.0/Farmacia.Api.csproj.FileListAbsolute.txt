@@ -176,3 +176,4 @@ D:\Visual studio morado\Farmacia\Farmacia\bin\Debug\net9.0\Farmacia.Application.
 D:\Visual studio morado\Farmacia\Farmacia\bin\Debug\net9.0\Farmacia.Validations.dll
 D:\Visual studio morado\Farmacia\Farmacia\bin\Debug\net9.0\Farmacia.Application.pdb
 D:\Visual studio morado\Farmacia\Farmacia\bin\Debug\net9.0\Farmacia.Validations.pdb
+D:\Visual studio morado\Farmacia\Farmacia\obj\Debug\net9.0\Farmacia.Api.sourcelink.json

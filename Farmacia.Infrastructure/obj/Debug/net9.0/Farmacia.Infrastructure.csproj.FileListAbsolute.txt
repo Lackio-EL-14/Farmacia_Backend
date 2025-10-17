@@ -15,3 +15,4 @@ D:\Visual studio morado\Farmacia\Farmacia.Infrastructure\obj\Debug\net9.0\refint
 D:\Visual studio morado\Farmacia\Farmacia.Infrastructure\obj\Debug\net9.0\Farmacia.Infrastructure.pdb
 D:\Visual studio morado\Farmacia\Farmacia.Infrastructure\obj\Debug\net9.0\Farmacia.Infrastructure.genruntimeconfig.cache
 D:\Visual studio morado\Farmacia\Farmacia.Infrastructure\obj\Debug\net9.0\ref\Farmacia.Infrastructure.dll
+D:\Visual studio morado\Farmacia\Farmacia.Infrastructure\obj\Debug\net9.0\Farmacia.Infrastructure.sourcelink.json

@@ -196,5 +196,37 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Farmacia.Api.Controllers.VentaController",
+    "Method": "RegistrarVenta",
+    "RelativePath": "api/Venta",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Farmacia.Infrastructure.DTOs.VentaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Farmacia.Api.Controllers.VentaController",
+    "Method": "AnularVenta",
+    "RelativePath": "api/Venta/anular/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

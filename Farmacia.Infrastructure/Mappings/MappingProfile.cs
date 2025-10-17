@@ -38,6 +38,7 @@ namespace Farmacia.Infrastructure.Mappings
             CreateMap<Venta, VentaDto>().ReverseMap();
 
 
+
         }
     }
 }

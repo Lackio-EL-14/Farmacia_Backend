@@ -28,10 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Validators\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Farmacia.Core\Farmacia.Core.csproj" />
     <ProjectReference Include="..\Farmacia.Infrastructure\Farmacia.Infrastructure.csproj" />
   </ItemGroup>

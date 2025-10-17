@@ -19,3 +19,4 @@ D:\Visual studio morado\Farmacia\Farmacia.Application\bin\Debug\net9.0\Farmacia.
 D:\Visual studio morado\Farmacia\Farmacia.Application\bin\Debug\net9.0\Farmacia.Infrastructure.pdb
 D:\Visual studio morado\Farmacia\Farmacia.Application\bin\Debug\net9.0\Farmacia.Validations.pdb
 D:\Visual studio morado\Farmacia\Farmacia.Application\obj\Debug\net9.0\Farmacia.2A8C37F3.Up2Date
+D:\Visual studio morado\Farmacia\Farmacia.Application\obj\Debug\net9.0\Farmacia.Application.sourcelink.json

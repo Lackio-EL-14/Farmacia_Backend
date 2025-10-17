@@ -12,6 +12,10 @@ namespace Farmacia.Core.Interfaces
         //Asi con cada nueva tabla que se cree en la base de datos se debe crear un nuevo repositorio
         IBaseRepository<Producto> Productos { get; }
         IBaseRepository<Cliente> Clientes { get; }
+        IBaseRepository<Venta> Ventas { get; }
+        IBaseRepository<DetalleVenta> DetallesVenta { get; }
+        IBaseRepository<Factura> Facturas { get; }
+
 
         Task<int> SaveChangesAsync();
         void SaveChanges();

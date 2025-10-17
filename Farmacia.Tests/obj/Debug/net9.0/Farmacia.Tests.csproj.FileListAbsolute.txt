@@ -29,3 +29,4 @@ D:\Visual studio morado\Farmacia\Farmacia.Tests\bin\Debug\net9.0\Farmacia.Infras
 D:\Visual studio morado\Farmacia\Farmacia.Tests\bin\Debug\net9.0\Farmacia.Validations.pdb
 D:\Visual studio morado\Farmacia\Farmacia.Tests\bin\Debug\net9.0\Farmacia.Api.pdb
 D:\Visual studio morado\Farmacia\Farmacia.Tests\obj\Debug\net9.0\Farmacia.0E8F1849.Up2Date
+D:\Visual studio morado\Farmacia\Farmacia.Tests\obj\Debug\net9.0\Farmacia.Tests.sourcelink.json

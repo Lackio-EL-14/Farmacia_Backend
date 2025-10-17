@@ -1,7 +1,10 @@
+using Farmacia.Application.Services;
 using Farmacia.Core.Interfaces;
 using Farmacia.Infrastructure.Data;
 using Farmacia.Infrastructure.Mappings;
 using Farmacia.Infrastructure.Repositories;
+using Farmacia.Validations.Validators;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 namespace Farmacia.Api
@@ -20,6 +23,9 @@ namespace Farmacia.Api
 
             // Inyección de UnitOfWork genérico para todas las tablas y entidades. Dejamos de lado los repositorios específicos.
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<VentaService>();
+            builder.Services.AddValidatorsFromAssemblyContaining<VentaValidator>();
+
 
             builder.Services.AddControllers()
                 .AddNewtonsoftJson(options =>

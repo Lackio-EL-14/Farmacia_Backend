@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Farmacia.Infrastructure.DTOs
 {
@@ -13,5 +9,7 @@ namespace Farmacia.Infrastructure.DTOs
         public decimal Total { get; set; }
 
         public int ClienteId { get; set; }
+
+        public List<DetalleVentaDto> Detalles { get; set; } = new List<DetalleVentaDto>();
     }
 }

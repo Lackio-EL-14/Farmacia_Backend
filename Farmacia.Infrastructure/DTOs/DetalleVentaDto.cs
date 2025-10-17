@@ -1,9 +1,4 @@
-﻿using Farmacia.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Farmacia.Infrastructure.DTOs
 {
@@ -11,7 +6,7 @@ namespace Farmacia.Infrastructure.DTOs
     {
         public int Id { get; set; }
 
-        public int VentaId { get; set; }
+        public int? VentaId { get; set; }
 
         public int ProductoId { get; set; }
 
