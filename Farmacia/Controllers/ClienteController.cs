@@ -18,15 +18,26 @@ namespace Farmacia.Api.Controllers
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-
+        /// <summary>
+        /// Recupera todos los clientes registrados.
+        /// </summary>
+        /// <remarks>
+        /// Este metodo obtiene una lista de todos los clientes almacenados en la base de datos y los devuelve en formato DTO.
+        /// </remarks>
+        /// <param>   </param>
+        /// <returns></returns>
+        /// <responsecode="200">Retorna todos los clientes</responsecode>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet]
+        
         public async Task<ActionResult<IEnumerable<ClienteDto>>> GetAll()
         {
             var clientes = await _unitOfWork.Clientes.GetAll();
             var clientesDto = _mapper.Map<IEnumerable<ClienteDto>>(clientes);
             return Ok(clientesDto);
         }
-
+        /*
         [HttpGet]
 
         public async Task<ActionResult<ClienteDto>> GetById(int id)
@@ -36,7 +47,7 @@ namespace Farmacia.Api.Controllers
                 return NotFound();
             return Ok(_mapper.Map<ClienteDto>(cliente));
         }
-
+        */
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] ClienteDto dto)
         {

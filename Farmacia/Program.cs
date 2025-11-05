@@ -15,6 +15,14 @@ namespace Farmacia.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            //configurar secretos de usuario
+            if (builder.Environment.IsDevelopment())
+            {
+                builder.Configuration.AddUserSecrets<Program>();
+            }
+
+            //En produccion los secrets vendran de entornos globales
+
             var connectionString = builder.Configuration.GetConnectionString("ConnectionMySql");
             builder.Services.AddDbContext<FarmaciaContext>(options =>
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
@@ -34,7 +42,44 @@ namespace Farmacia.Api
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
 
+            //Swagger
+
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new ()
+                {
+                    Title = "Farmacia API",
+                    Version = "v1",
+                    Description = "Documentacion de la API para la gestión de una farmacia.",
+                    Contact = new ()
+                    {
+                        Name = "La catolicoaaaa",
+                        Email = "PruebaDeApiFarm@gmail.com"
+                    }
+
+                });
+                var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var  xmlFilePath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
+                options.IncludeXmlComments(xmlFilePath);   
+                options.EnableAnnotations();
+            });
+
+            
+
             var app = builder.Build();
+
+            //Usar swagger
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Farmacia API v1");
+                    options.RoutePrefix = string.Empty; 
+                });
+            }
+         
 
             app.UseHttpsRedirection();
             app.UseAuthorization();
