@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using Farmacia.Infrastructure.DTOs;
 
+
 namespace Farmacia.Validations.Validators
 {
     public class VentaValidator : AbstractValidator<VentaDto>

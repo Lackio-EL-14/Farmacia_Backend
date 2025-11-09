@@ -23,7 +23,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ClienteDto"
+                    "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
                   }
                 }
               },
@@ -31,7 +31,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ClienteDto"
+                    "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
                   }
                 }
               },
@@ -39,7 +39,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ClienteDto"
+                    "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
                   }
                 }
               }
@@ -50,17 +50,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
                 }
               }
             }
@@ -75,22 +75,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
               }
             }
           }
@@ -122,22 +122,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ClienteDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ClienteDto"
               }
             }
           }
@@ -170,6 +170,476 @@
         }
       }
     },
+    "/api/DetalleVenta": {
+      "get": {
+        "tags": [
+          "DetalleVenta"
+        ],
+        "summary": "Obtiene todos los detalles de venta con soporte de filtros y paginación.",
+        "parameters": [
+          {
+            "name": "VentaId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ProductoId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "ProductoNombre",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "OrderDir",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Core.Pagination.PagedList`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Core.Pagination.PagedList`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Core.Pagination.PagedList`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "DetalleVenta"
+        ],
+        "summary": "Crea un nuevo detalle de venta asociado a una venta.",
+        "requestBody": {
+          "description": "Datos del detalle de venta.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetalleVentaDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetalleVentaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetalleVentaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DetalleVentaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DetalleVenta/venta/{ventaId}": {
+      "get": {
+        "tags": [
+          "DetalleVenta"
+        ],
+        "summary": "Obtiene los detalles de una venta específica.",
+        "parameters": [
+          {
+            "name": "ventaId",
+            "in": "path",
+            "description": "ID de la venta.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[System.Collections.Generic.List`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[System.Collections.Generic.List`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[System.Collections.Generic.List`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/DetalleVenta/{id}": {
+      "delete": {
+        "tags": [
+          "DetalleVenta"
+        ],
+        "summary": "Elimina un detalle de venta por su ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID del detalle.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Factura": {
+      "get": {
+        "tags": [
+          "Factura"
+        ],
+        "summary": "Obtiene todas las facturas registradas con soporte de filtros y paginación.",
+        "parameters": [
+          {
+            "name": "VentaId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Numero",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "FechaDesde",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "FechaHasta",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "Page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "OrderDir",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Core.Pagination.PagedList`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Core.Pagination.PagedList`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Core.Pagination.PagedList`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Factura"
+        ],
+        "summary": "Crea una nueva factura asociada a una venta existente.",
+        "requestBody": {
+          "description": "Datos de la factura.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.FacturaDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.FacturaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.FacturaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.FacturaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Factura/{id}": {
+      "get": {
+        "tags": [
+          "Factura"
+        ],
+        "summary": "Obtiene una factura por su identificador.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la factura.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Factura"
+        ],
+        "summary": "Elimina una factura (opcionalmente, marcar como anulada).",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID de la factura.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Producto": {
       "get": {
         "tags": [
@@ -183,7 +653,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ProductoDto"
+                    "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
                   }
                 }
               },
@@ -191,7 +661,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ProductoDto"
+                    "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
                   }
                 }
               },
@@ -199,7 +669,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/ProductoDto"
+                    "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
                   }
                 }
               }
@@ -215,22 +685,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
               }
             }
           }
@@ -264,17 +734,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductoDto"
+                  "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductoDto"
+                  "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ProductoDto"
+                  "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
                 }
               }
             }
@@ -300,22 +770,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductoDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.ProductoDto"
               }
             }
           }
@@ -353,42 +823,64 @@
         "tags": [
           "Venta"
         ],
+        "summary": "Registra una venta completa, actualiza stock y genera factura electrónica.",
         "requestBody": {
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/VentaDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.VentaDto"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/VentaDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.VentaDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/VentaDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.VentaDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/VentaDto"
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.VentaDto"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Venta registrada",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[VentaDtos, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[VentaDtos, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Farmacia.Core.Response.ApiResponse`1[[VentaDtos, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error en datos"
           }
         }
       }
     },
-    "/api/Venta/anular/{id}": {
+    "/api/Venta/{id}/anular": {
       "post": {
         "tags": [
           "Venta"
         ],
+        "summary": "Anula una venta y restaura el stock.",
         "parameters": [
           {
             "name": "id",
@@ -402,7 +894,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Venta anulada"
           }
         }
       }
@@ -410,7 +902,283 @@
   },
   "components": {
     "schemas": {
-      "ClienteDto": {
+      "DetalleVentaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ventaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "productoNombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioUnitario": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Pagination.PagedList`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetalleVentaDto"
+            },
+            "nullable": true
+          },
+          "currentPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "hasPrevious": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hasNext": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Pagination.PagedList`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.FacturaDto"
+            },
+            "nullable": true
+          },
+          "currentPage": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "hasPrevious": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hasNext": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Response.ApiResponse`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/DetalleVentaDto"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Farmacia.Core.Response.PaginationMetadata"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Response.ApiResponse`1[[Farmacia.Core.Pagination.PagedList`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/Farmacia.Core.Pagination.PagedList`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Farmacia.Core.Response.PaginationMetadata"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Response.ApiResponse`1[[Farmacia.Core.Pagination.PagedList`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/Farmacia.Core.Pagination.PagedList`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Farmacia.Core.Response.PaginationMetadata"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Response.ApiResponse`1[[Farmacia.Infrastructure.DTOs.FacturaDto, Farmacia.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.FacturaDto"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Farmacia.Core.Response.PaginationMetadata"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Response.ApiResponse`1[[System.Collections.Generic.List`1[[DetalleVentaDto, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DetalleVentaDto"
+            },
+            "nullable": true
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Farmacia.Core.Response.PaginationMetadata"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Response.ApiResponse`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "string",
+            "nullable": true
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Farmacia.Core.Response.PaginationMetadata"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Response.ApiResponse`1[[VentaDtos, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "$ref": "#/components/schemas/VentaDtos"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Farmacia.Core.Response.PaginationMetadata"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Core.Response.PaginationMetadata": {
+        "type": "object",
+        "properties": {
+          "currentPage": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Infrastructure.DTOs.ClienteDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -432,7 +1200,7 @@
         },
         "additionalProperties": false
       },
-      "DetalleVentaDto": {
+      "Farmacia.Infrastructure.DTOs.DetalleVentaDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -463,34 +1231,33 @@
         },
         "additionalProperties": false
       },
-      "ProblemDetails": {
+      "Farmacia.Infrastructure.DTOs.FacturaDto": {
         "type": "object",
         "properties": {
-          "type": {
-            "type": "string",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "status": {
+          "id": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
-          "detail": {
+          "numeroFactura": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroAutorizacion": {
             "type": "string",
             "nullable": true
           },
-          "instance": {
+          "fechaEmision": {
             "type": "string",
-            "nullable": true
+            "format": "date-time"
+          },
+          "ventaId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
-        "additionalProperties": { }
+        "additionalProperties": false
       },
-      "ProductoDto": {
+      "Farmacia.Infrastructure.DTOs.ProductoDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -540,7 +1307,7 @@
         },
         "additionalProperties": false
       },
-      "VentaDto": {
+      "Farmacia.Infrastructure.DTOs.VentaDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -562,8 +1329,61 @@
           "detalles": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/DetalleVentaDto"
+              "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.DetalleVentaDto"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Microsoft.AspNetCore.Mvc.ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "VentaDtos": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroFactura": {
+            "type": "string",
             "nullable": true
           }
         },

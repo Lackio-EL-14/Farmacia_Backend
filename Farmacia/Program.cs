@@ -1,11 +1,15 @@
+using Farmacia.Api.Extensions;
 using Farmacia.Application.Services;
 using Farmacia.Core.Interfaces;
 using Farmacia.Infrastructure.Data;
 using Farmacia.Infrastructure.Mappings;
 using Farmacia.Infrastructure.Repositories;
+using Farmacia.Infrastructure.Repositories.Dapper;
 using Farmacia.Validations.Validators;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Farmacia.Api
 {
@@ -33,6 +37,11 @@ namespace Farmacia.Api
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<VentaService>();
             builder.Services.AddValidatorsFromAssemblyContaining<VentaValidator>();
+            builder.Services.AddScoped<IDapperProductoRepository, DapperProductoRepository>();
+            builder.Services.AddScoped<IVentaDapperRepository, VentaDapperRepository>();
+            builder.Services.AddScoped<IDetalleVentaDapperRepository, DetalleVentaDapperRepository>();
+            builder.Services.AddScoped<IFacturaDapperRepository, FacturaDapperRepository>();
+
 
 
             builder.Services.AddControllers()
@@ -47,6 +56,8 @@ namespace Farmacia.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
             {
+                options.CustomSchemaIds(type => type.FullName);
+
                 options.SwaggerDoc("v1", new ()
                 {
                     Title = "Farmacia API",
@@ -59,6 +70,7 @@ namespace Farmacia.Api
                     }
 
                 });
+
                 var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var  xmlFilePath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
                 options.IncludeXmlComments(xmlFilePath);   
@@ -79,9 +91,33 @@ namespace Farmacia.Api
                     options.RoutePrefix = string.Empty; 
                 });
             }
-         
+            /*
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+            }).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["Authentication:Issuer"],
+                    ValidAudience = builder.Configuration["Authentication:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Authentication:SecretKey"])
+                    )
+                };
+            });
+            */
+            app.UseMiddleware<Farmacia.Api.Middlewares.GlobalExceptionMiddleware>();
 
             app.UseHttpsRedirection();
+            app.UseGlobalExceptionMiddleware(); //Cuidadoooooasofasfaofdas
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
             app.Run();

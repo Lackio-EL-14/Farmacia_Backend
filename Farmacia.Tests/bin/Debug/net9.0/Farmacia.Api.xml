@@ -5,5 +5,65 @@
     </assembly>
     <members>
         <!-- Badly formed XML comment ignored for member "M:Farmacia.Api.Controllers.ClienteController.GetAll" -->
+        <member name="M:Farmacia.Api.Controllers.DetalleVentaController.GetDetalles(Farmacia.Core.DTOs.DetalleVentaFilterDto)">
+            <summary>
+            Obtiene todos los detalles de venta con soporte de filtros y paginación.
+            </summary>
+            <param name="filter">Parámetros opcionales de filtrado y paginación.</param>
+            <returns>Lista paginada de detalles de venta.</returns>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.DetalleVentaController.GetDetallesByVentaId(System.Int32)">
+            <summary>
+            Obtiene los detalles de una venta específica.
+            </summary>
+            <param name="ventaId">ID de la venta.</param>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.DetalleVentaController.CreateDetalle(DetalleVentaDto)">
+            <summary>
+            Crea un nuevo detalle de venta asociado a una venta.
+            </summary>
+            <param name="dto">Datos del detalle de venta.</param>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.DetalleVentaController.DeleteDetalle(System.Int32)">
+            <summary>
+            Elimina un detalle de venta por su ID.
+            </summary>
+            <param name="id">ID del detalle.</param>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.FacturaController.GetFacturas(Farmacia.Core.DTOs.FacturaFilterDto)">
+            <summary>
+            Obtiene todas las facturas registradas con soporte de filtros y paginación.
+            </summary>
+            <param name="filter">Parámetros opcionales de filtrado y paginación.</param>
+            <returns>Lista paginada de facturas.</returns>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.FacturaController.GetFacturaById(System.Int32)">
+            <summary>
+            Obtiene una factura por su identificador.
+            </summary>
+            <param name="id">ID de la factura.</param>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.FacturaController.CreateFactura(Farmacia.Infrastructure.DTOs.FacturaDto)">
+            <summary>
+            Crea una nueva factura asociada a una venta existente.
+            </summary>
+            <param name="dto">Datos de la factura.</param>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.FacturaController.DeleteFactura(System.Int32)">
+            <summary>
+            Elimina una factura (opcionalmente, marcar como anulada).
+            </summary>
+            <param name="id">ID de la factura.</param>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.VentaController.RegistrarVenta(Farmacia.Infrastructure.DTOs.VentaDto)">
+            <summary>
+            Registra una venta completa, actualiza stock y genera factura electrónica.
+            </summary>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.VentaController.AnularVenta(System.Int32)">
+            <summary>
+            Anula una venta y restaura el stock.
+            </summary>
+        </member>
     </members>
 </doc>

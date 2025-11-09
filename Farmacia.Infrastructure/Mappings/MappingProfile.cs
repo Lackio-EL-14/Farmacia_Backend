@@ -22,7 +22,7 @@ namespace Farmacia.Infrastructure.Mappings
             CreateMap<DetalleCompra, DetalleCompraDto>().ReverseMap();
             CreateMap<DetalleVenta, DetalleVentaDto>().ReverseMap();
             CreateMap<Empresa, EmpresaDto>().ReverseMap();
-            CreateMap<Factura, FacturaDto>().ReverseMap();
+            CreateMap<Factura, FacturaDtos>().ReverseMap();
             CreateMap<LoteProducto, LoteProductoDto>().ReverseMap();
             CreateMap<Marca, MarcaDto>().ReverseMap();
             CreateMap<MovimientoInventario, MovimientoInventarioDto>().ReverseMap();
@@ -35,7 +35,7 @@ namespace Farmacia.Infrastructure.Mappings
             CreateMap<Unidad, UnidadDto>().ReverseMap();
             CreateMap<Usuario, UsuarioDto>().ReverseMap();
             CreateMap<Vendedor, VendedorDto>().ReverseMap();
-            CreateMap<Venta, VentaDto>().ReverseMap();
+            CreateMap<Venta, VentaDtos>().ReverseMap();
 
 
 
