@@ -13,6 +13,9 @@ namespace Farmacia.Infrastructure.Repositories
         private IBaseRepository<Venta>? _ventas;
         private IBaseRepository<DetalleVenta>? _detallesVenta;
         private IBaseRepository<Factura>? _facturas;
+        private BaseRepository<Proveedor> _proveedores;
+        private BaseRepository<Compra> _compras;
+        private BaseRepository<DetalleCompra> _detallesCompra;
 
         public UnitOfWork(FarmaciaContext context)
         {
@@ -24,6 +27,13 @@ namespace Farmacia.Infrastructure.Repositories
         public IBaseRepository<Venta> Ventas => _ventas ??= new BaseRepository<Venta>(_context);
         public IBaseRepository<DetalleVenta> DetallesVenta => _detallesVenta ??= new BaseRepository<DetalleVenta>(_context);
         public IBaseRepository<Factura> Facturas => _facturas ??= new BaseRepository<Factura>(_context);
+
+        public IBaseRepository<Proveedor> Proveedores => _proveedores ??= new BaseRepository<Proveedor>(_context);
+
+        public IBaseRepository<Compra> Compras => _compras ??= new BaseRepository<Compra>(_context);
+
+        public IBaseRepository<DetalleCompra> DetallesCompra => _detallesCompra ??= new BaseRepository<DetalleCompra>(_context);
+
 
 
         public void SaveChanges()

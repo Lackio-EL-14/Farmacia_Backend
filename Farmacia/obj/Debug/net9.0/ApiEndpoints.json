@@ -82,6 +82,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Farmacia.Api.Controllers.CompraController",
+    "Method": "RegistrarCompra",
+    "RelativePath": "api/Compra/registrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Farmacia.Infrastructure.DTOs.RegistrarCompraDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Farmacia.Api.Controllers.DetalleVentaController",
     "Method": "GetDetalles",
     "RelativePath": "api/DetalleVenta",

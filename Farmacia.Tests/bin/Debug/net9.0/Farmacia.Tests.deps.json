@@ -18,6 +18,7 @@
           "Farmacia.Validations": "1.0.0",
           "FluentValidation": "12.0.0",
           "FluentValidation.DependencyInjectionExtensions": "12.0.0",
+          "Google_GenerativeAI": "3.4.1",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.9",
           "Microsoft.EntityFrameworkCore": "9.0.9",
           "Microsoft.EntityFrameworkCore.Design": "9.0.9",
@@ -29,6 +30,9 @@
           "Moq.Dapper": "1.0.7",
           "Moq.EntityFrameworkCore": "9.0.0.5",
           "Pomelo.EntityFrameworkCore.MySql": "9.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerGen": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerUI": "9.0.6",
           "xunit": "2.9.3",
           "xunit.core": "2.9.3"
         },
@@ -165,6 +169,18 @@
           "lib/net8.0/FluentValidation.DependencyInjectionExtensions.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.0.0"
+          }
+        }
+      },
+      "Google_GenerativeAI/3.4.1": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "9.0.9",
+          "System.Text.Json": "9.0.9"
+        },
+        "runtime": {
+          "lib/net9.0/GenerativeAI.dll": {
+            "assemblyVersion": "3.4.1.0",
+            "fileVersion": "3.4.1.0"
           }
         }
       },
@@ -682,7 +698,6 @@
           "Microsoft.EntityFrameworkCore.Design": "9.0.9"
         }
       },
-      "Microsoft.Extensions.ApiDescription.Server/9.0.0": {},
       "Microsoft.Extensions.Caching.Abstractions/9.0.9": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "9.0.9"
@@ -1105,14 +1120,6 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
-      "Swashbuckle.AspNetCore/9.0.6": {
-        "dependencies": {
-          "Microsoft.Extensions.ApiDescription.Server": "9.0.0",
-          "Swashbuckle.AspNetCore.Swagger": "9.0.6",
-          "Swashbuckle.AspNetCore.SwaggerGen": "9.0.6",
-          "Swashbuckle.AspNetCore.SwaggerUI": "9.0.6"
-        }
-      },
       "Swashbuckle.AspNetCore.Annotations/9.0.6": {
         "dependencies": {
           "Swashbuckle.AspNetCore.SwaggerGen": "9.0.6"
@@ -2011,6 +2018,7 @@
           "Farmacia.Validations": "1.0.0",
           "FluentValidation": "12.0.0",
           "FluentValidation.DependencyInjectionExtensions": "12.0.0",
+          "Google_GenerativeAI": "3.4.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.10",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.9",
           "Microsoft.AspNetCore.Mvc.Versioning": "5.1.0",
@@ -2022,9 +2030,10 @@
           "Microsoft.Extensions.DependencyInjection": "9.0.9",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9",
           "Pomelo.EntityFrameworkCore.MySql": "9.0.0",
-          "Swashbuckle.AspNetCore": "9.0.6",
           "Swashbuckle.AspNetCore.Annotations": "9.0.6",
-          "Swashbuckle.AspNetCore.Swagger": "9.0.6"
+          "Swashbuckle.AspNetCore.Swagger": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerGen": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerUI": "9.0.6"
         },
         "runtime": {
           "Farmacia.Api.dll": {
@@ -2042,12 +2051,16 @@
           "Farmacia.Validations": "1.0.0",
           "FluentValidation": "12.0.0",
           "FluentValidation.DependencyInjectionExtensions": "12.0.0",
+          "Google_GenerativeAI": "3.4.1",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.9",
           "Microsoft.EntityFrameworkCore": "9.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.9",
           "Microsoft.Extensions.DependencyInjection": "9.0.9",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9",
-          "Pomelo.EntityFrameworkCore.MySql": "9.0.0"
+          "Pomelo.EntityFrameworkCore.MySql": "9.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerGen": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerUI": "9.0.6"
         },
         "runtime": {
           "Farmacia.Application.dll": {
@@ -2062,12 +2075,16 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "FluentValidation": "12.0.0",
           "FluentValidation.DependencyInjectionExtensions": "12.0.0",
+          "Google_GenerativeAI": "3.4.1",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.9",
           "Microsoft.EntityFrameworkCore": "9.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.9",
           "Microsoft.Extensions.DependencyInjection": "9.0.9",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9",
-          "Pomelo.EntityFrameworkCore.MySql": "9.0.0"
+          "Pomelo.EntityFrameworkCore.MySql": "9.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerGen": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerUI": "9.0.6"
         },
         "runtime": {
           "Farmacia.Core.dll": {
@@ -2084,12 +2101,16 @@
           "Farmacia.Core": "1.0.0",
           "FluentValidation": "12.0.0",
           "FluentValidation.DependencyInjectionExtensions": "12.0.0",
+          "Google_GenerativeAI": "3.4.1",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.9",
           "Microsoft.EntityFrameworkCore": "9.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.9",
           "Microsoft.Extensions.DependencyInjection": "9.0.9",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9",
-          "Pomelo.EntityFrameworkCore.MySql": "9.0.0"
+          "Pomelo.EntityFrameworkCore.MySql": "9.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerGen": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerUI": "9.0.6"
         },
         "runtime": {
           "Farmacia.Infrastructure.dll": {
@@ -2106,12 +2127,16 @@
           "Farmacia.Infrastructure": "1.0.0",
           "FluentValidation": "12.0.0",
           "FluentValidation.DependencyInjectionExtensions": "12.0.0",
+          "Google_GenerativeAI": "3.4.1",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "9.0.9",
           "Microsoft.EntityFrameworkCore": "9.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.9",
           "Microsoft.Extensions.DependencyInjection": "9.0.9",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9",
-          "Pomelo.EntityFrameworkCore.MySql": "9.0.0"
+          "Pomelo.EntityFrameworkCore.MySql": "9.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerGen": "9.0.6",
+          "Swashbuckle.AspNetCore.SwaggerUI": "9.0.6"
         },
         "runtime": {
           "Farmacia.Validations.dll": {
@@ -2204,6 +2229,13 @@
       "sha512": "sha512-B28fBRL1UjhGsBC8fwV6YBZosh+SiU1FxdD7l7p5dGPgRlVI7UnM+Lgzmg+unZtV1Zxzpaw96UY2MYfMaAd8cg==",
       "path": "fluentvalidation.dependencyinjectionextensions/12.0.0",
       "hashPath": "fluentvalidation.dependencyinjectionextensions.12.0.0.nupkg.sha512"
+    },
+    "Google_GenerativeAI/3.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zNqvXBnqzX0mk2Lz1Sl1lvmsPlSFNDjHY7pl/k1CBJefpOdjwiNArPEsoCUxAl0frJyACwc/Jsdv7Dj/xKX2uw==",
+      "path": "google_generativeai/3.4.1",
+      "hashPath": "google_generativeai.3.4.1.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -2386,13 +2418,6 @@
       "sha512": "sha512-Q8n1PXXJApa1qX8HI3r/YuHoJ1HuLwjI2hLqaCV9K9pqQhGpi6Z38laOYwL2ElUOTWCxTKMDEMMYWfPlw6rwgg==",
       "path": "microsoft.entityframeworkcore.tools/9.0.9",
       "hashPath": "microsoft.entityframeworkcore.tools.9.0.9.nupkg.sha512"
-    },
-    "Microsoft.Extensions.ApiDescription.Server/9.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1Kzzf7pRey40VaUkHN9/uWxrKVkLu2AQjt+GVeeKLLpiEHAJ1xZRsLSh4ZZYEnyS7Kt2OBOPmsXNdU+wbcOl5w==",
-      "path": "microsoft.extensions.apidescription.server/9.0.0",
-      "hashPath": "microsoft.extensions.apidescription.server.9.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/9.0.9": {
       "type": "package",
@@ -2736,13 +2761,6 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
-    },
-    "Swashbuckle.AspNetCore/9.0.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-q/UfEAgrk6qQyjHXgsW9ILw0YZLfmPtWUY4wYijliX6supozC+TkzU0G6FTnn/dPYxnChjM8g8lHjWHF6VKy+A==",
-      "path": "swashbuckle.aspnetcore/9.0.6",
-      "hashPath": "swashbuckle.aspnetcore.9.0.6.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore.Annotations/9.0.6": {
       "type": "package",

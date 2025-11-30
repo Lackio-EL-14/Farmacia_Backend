@@ -170,6 +170,42 @@
         }
       }
     },
+    "/api/Compra/registrar": {
+      "post": {
+        "tags": [
+          "Compra"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.RegistrarCompraDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.RegistrarCompraDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.RegistrarCompraDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.RegistrarCompraDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/DetalleVenta": {
       "get": {
         "tags": [
@@ -1200,6 +1236,24 @@
         },
         "additionalProperties": false
       },
+      "Farmacia.Infrastructure.DTOs.DetalleCompraCrearDto": {
+        "type": "object",
+        "properties": {
+          "productoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioUnitario": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "Farmacia.Infrastructure.DTOs.DetalleVentaDto": {
         "type": "object",
         "properties": {
@@ -1303,6 +1357,23 @@
           "sucursalId": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Farmacia.Infrastructure.DTOs.RegistrarCompraDto": {
+        "type": "object",
+        "properties": {
+          "proveedorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "detalles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Farmacia.Infrastructure.DTOs.DetalleCompraCrearDto"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Net;
 
 namespace Farmacia.Core.Exceptions
@@ -16,3 +16,4 @@ namespace Farmacia.Core.Exceptions
         }
     }
 }
+

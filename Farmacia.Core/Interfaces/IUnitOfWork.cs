@@ -7,6 +7,9 @@ namespace Farmacia.Core.Interfaces
     {
 
         IBaseRepository<Producto> Productos { get; }
+        IBaseRepository<Proveedor> Proveedores { get; }
+        IBaseRepository<Compra> Compras { get; }
+        IBaseRepository<DetalleCompra> DetallesCompra { get; }
         IBaseRepository<Cliente> Clientes { get; }
         IBaseRepository<Venta> Ventas { get; }
         IBaseRepository<DetalleVenta> DetallesVenta { get; }
