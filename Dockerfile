@@ -1,3 +1,4 @@
+
 # Build stage
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
@@ -6,21 +7,7 @@ WORKDIR /src
 COPY ["Farmacia.sln", "./"]
 
 # Copia TODOS los archivos .csproj
-COPY ["Farmacia/*.csproj", "Farmacia/"]
-COPY ["Farmacia.Application/*.csproj", "Farmacia.Application/"]
-COPY ["Farmacia.Core/*.csproj", "Farmacia.Core/"]
-COPY ["Farmacia.Infrastructure/*.csproj", "Farmacia.Infrastructure/"]
-COPY ["Farmacia.Validations/*.csproj", "Farmacia.Validations/"]
-COPY ["Farmacia.Tests/*.csproj", "Farmacia.Tests/"]
-# Build stage
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /src
-
-# Copia el archivo de solución
-COPY ["Farmacia.sln", "./"]
-
-# Copia TODOS los archivos .csproj
-COPY ["Farmacia.Api/*.csproj", "Farmacia.Api/"]
+COPY ["Farmacia.Api/*.csproj", "Farmacia/"]
 COPY ["Farmacia.Application/*.csproj", "Farmacia.Application/"]
 COPY ["Farmacia.Core/*.csproj", "Farmacia.Core/"]
 COPY ["Farmacia.Infrastructure/*.csproj", "Farmacia.Infrastructure/"]
@@ -34,7 +21,7 @@ RUN dotnet restore "Farmacia.sln"
 COPY . .
 
 # Publica el proyecto API
-WORKDIR "/src/Farmacia.Api"
+WORKDIR "/src/Farmacia"
 RUN dotnet publish "Farmacia.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 # Runtime stage
