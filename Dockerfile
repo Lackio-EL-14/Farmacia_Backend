@@ -1,3 +1,6 @@
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+
 
 # Build stage
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
@@ -7,7 +10,7 @@ WORKDIR /src
 COPY ["Farmacia.sln", "./"]
 
 # Copia TODOS los archivos .csproj
-COPY ["Farmacia.Api/*.csproj", "Farmacia/"]
+COPY ["Farmacia/*.csproj", "Farmacia/"]
 COPY ["Farmacia.Application/*.csproj", "Farmacia.Application/"]
 COPY ["Farmacia.Core/*.csproj", "Farmacia.Core/"]
 COPY ["Farmacia.Infrastructure/*.csproj", "Farmacia.Infrastructure/"]
