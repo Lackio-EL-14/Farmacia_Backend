@@ -17,5 +17,6 @@ namespace Farmacia.Core.Entities
 
         public ICollection<DetalleVenta> Detalles { get; set; } = new List<DetalleVenta>();
         public Factura? Factura { get; set; }
+        public DateTime FechaVenta { get; set; }
     }
 }

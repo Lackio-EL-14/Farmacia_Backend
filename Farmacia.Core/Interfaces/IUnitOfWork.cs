@@ -14,10 +14,16 @@ namespace Farmacia.Core.Interfaces
         IBaseRepository<Venta> Ventas { get; }
         IBaseRepository<DetalleVenta> DetallesVenta { get; }
         IBaseRepository<Factura> Facturas { get; }
+        IBaseRepository<MovimientoInventario> Movimientos { get; }
+        IBaseRepository<Caja> Cajas { get; }
+        IBaseRepository<ArqueoCaja> Arqueos { get; }
+        IBaseRepository<Usuario> Usuarios { get; }
 
 
         Task<int> SaveChangesAsync();
         void SaveChanges();
-
+        Task BeginTransaccionAsync();
+        Task CommitAsync();
+        Task RollbackAsync();
     }
 }

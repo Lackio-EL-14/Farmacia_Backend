@@ -1,5 +1,53 @@
 [
   {
+    "ContainingType": "Farmacia.Api.Controllers.CajaController",
+    "Method": "AbrirCaja",
+    "RelativePath": "api/Caja/abrir",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Farmacia.Infrastructure.DTOs.AperturaCajaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Farmacia.Core.Response.ApiResponse\u00601[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Farmacia.Api.Controllers.CajaController",
+    "Method": "CerrarCaja",
+    "RelativePath": "api/Caja/cerrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Farmacia.Infrastructure.DTOs.CierreCajaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Farmacia.Core.Response.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Farmacia.Api.Controllers.ClienteController",
     "Method": "GetAll",
     "RelativePath": "api/Cliente",
@@ -83,6 +131,35 @@
   },
   {
     "ContainingType": "Farmacia.Api.Controllers.CompraController",
+    "Method": "GetAll",
+    "RelativePath": "api/Compra",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Farmacia.Core.Response.ApiResponse\u00601[[System.Collections.Generic.IEnumerable\u00601[[Farmacia.Core.Entities.Compra, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Farmacia.Api.Controllers.CompraController",
     "Method": "RegistrarCompra",
     "RelativePath": "api/Compra/registrar",
     "HttpMethod": "POST",
@@ -95,7 +172,22 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Farmacia.Core.Response.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Farmacia.Core.Response.ApiResponse\u00601[[System.Object, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
   },
   {
     "ContainingType": "Farmacia.Api.Controllers.DetalleVentaController",
@@ -380,6 +472,40 @@
     ]
   },
   {
+    "ContainingType": "Farmacia.Api.Controllers.KardexController",
+    "Method": "GetKardexPorProducto",
+    "RelativePath": "api/Kardex/producto/{productoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Farmacia.Core.Response.ApiResponse\u00601[[System.Collections.Generic.IEnumerable\u00601[[Farmacia.Core.Entities.MovimientoInventario, Farmacia.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Farmacia.Api.Controllers.ProductoController",
     "Method": "GetAll",
     "RelativePath": "api/Producto",
@@ -476,6 +602,32 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Farmacia.Api.Controllers.TokenController",
+    "Method": "Authentication",
+    "RelativePath": "api/Token/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "Farmacia.Infrastructure.DTOs.UserLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Farmacia.Api.Controllers.TokenController",
+    "Method": "MigrarPasswords",
+    "RelativePath": "api/Token/migrar-passwords",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

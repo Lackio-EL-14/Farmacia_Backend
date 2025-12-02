@@ -5,6 +5,22 @@
     </assembly>
     <members>
         <!-- Badly formed XML comment ignored for member "M:Farmacia.Api.Controllers.ClienteController.GetAll" -->
+        <member name="M:Farmacia.Api.Controllers.CompraController.RegistrarCompra(Farmacia.Infrastructure.DTOs.RegistrarCompraDto)">
+            <summary>
+            Registra una nueva compra de productos e incrementa el stock.
+            </summary>
+            <param name="dto">Datos de la compra y sus detalles.</param>
+            <returns>El ID de la compra generada.</returns>
+            <response code="200">Compra registrada exitosamente.</response>
+            <response code="400">Error de validación o negocio (ej. Proveedor no existe).</response>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.CompraController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Obtiene el listado paginado de compras realizadas.
+            </summary>
+            <param name="pageNumber">Número de página (default 1).</param>
+            <param name="pageSize">Registros por página (default 10).</param>
+        </member>
         <member name="M:Farmacia.Api.Controllers.DetalleVentaController.GetDetalles(Farmacia.Core.DTOs.DetalleVentaFilterDto)">
             <summary>
             Obtiene todos los detalles de venta con soporte de filtros y paginación.
@@ -54,6 +70,14 @@
             Elimina una factura (opcionalmente, marcar como anulada).
             </summary>
             <param name="id">ID de la factura.</param>
+        </member>
+        <member name="M:Farmacia.Api.Controllers.KardexController.GetKardexPorProducto(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Obtiene el historial de movimientos (entradas/salidas) de un producto.
+            </summary>
+            <param name="productoId">ID del producto a consultar.</param>
+            <param name="pageNumber">Número de página (default 1).</param>
+            <param name="pageSize">Cantidad de registros por página (default 10).</param>
         </member>
         <member name="M:Farmacia.Api.Controllers.VentaController.RegistrarVenta(Farmacia.Infrastructure.DTOs.VentaDto)">
             <summary>

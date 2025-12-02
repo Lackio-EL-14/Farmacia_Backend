@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Farmacia.Validations")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3319b13314ec87ecddf6afdefd7f4e2c2c37389f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5a582fea42a53871728277cf7e3862e2812c703")]
 [assembly: System.Reflection.AssemblyProductAttribute("Farmacia.Validations")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Farmacia.Validations")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

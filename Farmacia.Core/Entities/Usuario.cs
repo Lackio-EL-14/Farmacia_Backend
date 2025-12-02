@@ -8,7 +8,6 @@ namespace Farmacia.Core.Entities
 {
     public class Usuario : BaseEntities
     {
-        //public int Id { get; set; }
         public string NombreUsuario { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string PasswordHash { get; set; } = null!;
